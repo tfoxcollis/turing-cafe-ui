@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
+import ResContainer from "./ResContainer"
 
 class App extends Component {
     constructor(){
@@ -25,6 +26,7 @@ componentDidMount(){
         <div className='resy-container'>
           
         </div>
+        <ResContainer reservations={this.state.reservations} />
       </div>
     )
   }
