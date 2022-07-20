@@ -19,10 +19,22 @@ componentDidMount(){
 
 createReservation = (e, formdata) => {
   e.preventDefault()
-  formdata.id = Date.now()
-  this.setState((prevState) => {
-    return {reservations: [...prevState.reservations, formdata]}
+  const url = "http://localhost:3001/api/v1/reservations"
+  fetch(url, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formdata)
   })
+    .then(response => response.json())
+    .then(data => {
+      this.setState((prevState) => {
+        return {reservations: [...prevState.reservations, data]}
+      })
+    }
+  )
+
 }
 
   render() {
