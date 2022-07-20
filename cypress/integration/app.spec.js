@@ -1,6 +1,38 @@
 /// <reference types="cypress" />
 
+
 describe("App Dashboard", () => {
+  beforeEach( () => {
+    cy.visit("http://localhost:3000/")
+  
+  })
+
+  it("should have header", () => {
+    cy.get(".app-title")
+      .contains("Turing Cafe Reservations")
+  })
+
+  it("should have form inputs", () => {
+    cy.get(".name")
+    cy.get(".name")
+    cy.get(".date")
+    cy.get(".time")
+    cy.get(".number")
+
+  })
+
+  it("should have a reservation container", () => {
+    cy.get(".res-container")
+  })
+
+  it("should have a 9 reservations", () => {
+    cy.get(".res-container").children().should("have.length", 9)
+  })
+
+})
+
+
+describe("Check form functionality", () => {
   beforeEach( () => {
     cy.visit("http://localhost:3000/")
   
