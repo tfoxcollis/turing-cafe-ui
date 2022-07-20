@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import ResContainer from "./ResContainer"
+import ResForm from "./ResForm"
 
 class App extends Component {
     constructor(){
@@ -26,6 +27,7 @@ componentDidMount(){
         <div className='resy-container'>
           
         </div>
+        <ResForm />
         <ResContainer reservations={this.state.reservations} />
       </div>
     )
