@@ -21,4 +21,21 @@ describe("App Dashboard", () => {
   it("should have text field for number of guests",() => {
     cy.get(".number").type("3")
   })
+
+  it("should find the reservation button and click", () => {
+    cy.get(".name").type("trish")
+    cy.get(".date").type("8/10")
+    cy.get(".time").type("2:00")
+    cy.get(".number").type("3")
+    cy.get(".res-button").click()
+    cy.get(".card")
+      .contains("trish")
+    cy.get(".card")
+      .contains("8/10")
+    cy.get(".card")
+      .contains("2:00")
+    cy.get(".card")
+      .contains("3")
+
+  })
 })

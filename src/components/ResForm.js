@@ -51,7 +51,7 @@ class ResForm extends Component{
           value={this.state.number}
           onChange={e => this.handleChange(e)}
         />
-        <button>Make Reservation</button>
+        <button className="res-button">Make Reservation</button>
       </form>
 
     )}
