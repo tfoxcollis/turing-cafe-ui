@@ -20,6 +20,7 @@ class ResForm extends Component{
     return (
       <form onSubmit={e => this.props.createReservation(e,this.state)}>
         <input
+          className="name"
           type="text"
           placeholder="Guest Name"
           name="name"
@@ -27,6 +28,7 @@ class ResForm extends Component{
           onChange={e => this.handleChange(e)}
         />
         <input
+          className="date"
           type="text"
           placeholder="Date"
           name="date"
@@ -34,6 +36,7 @@ class ResForm extends Component{
           onChange={e => this.handleChange(e)}
         />
         <input
+          className="time"
           type="text"
           placeholder="Time"
           name="time"
@@ -41,6 +44,7 @@ class ResForm extends Component{
           onChange={e => this.handleChange(e)}
         />
         <input
+          className="number"
           type="text"
           placeholder="Number of Guests"
           name="number"
