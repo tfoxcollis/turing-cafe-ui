@@ -17,6 +17,14 @@ componentDidMount(){
   .then(data => this.setState({reservations: data}))
 }
 
+createReservation = (e, formdata) => {
+  e.preventDefault()
+  formdata.id = Date.now()
+  this.setState((prevState) => {
+    return {reservations: [...prevState.reservations, formdata]}
+  })
+}
+
   render() {
     return (
       <div className="App">
@@ -27,7 +35,7 @@ componentDidMount(){
         <div className='resy-container'>
           
         </div>
-        <ResForm />
+        <ResForm createReservation={this.createReservation}/>
         <ResContainer reservations={this.state.reservations} />
       </div>
     )

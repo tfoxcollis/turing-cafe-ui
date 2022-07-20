@@ -10,6 +10,7 @@ const ResContainer = ({reservations}) => {
         date={reservation.date}
         time={reservation.time}
         number={reservation.number}
+        key={reservation.id}
       />)
   })
   return(
